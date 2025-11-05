@@ -1,0 +1,9 @@
+# tasks file for roles/test_role
+---
+- name: Mostra hostname
+  ansible.builtin.command: hostname
+
+- name: Crea un file di test
+  ansible.builtin.file:
+    path: /tmp/test_ansible_role.txt
+    state: touch
