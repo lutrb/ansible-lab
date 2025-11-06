@@ -1,0 +1,16 @@
+---
+- name: Test variabili e facts
+  hosts: local
+  gather_facts: true
+
+  vars:
+    custom_message: "Ciao Capo, questa VM è pronta!"
+
+  tasks:
+    - name: Mostra un messaggio personalizzato
+      ansible.builtin.debug:
+        msg: "{{ custom_message }}"
+
+    - name: Mostra versione di sistema
+      ansible.builtin.debug:
+        msg: "Sistema operativo: {{ ansible_distribution }} {{ ansible_distribution_version }}"
